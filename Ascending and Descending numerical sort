@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sample Sorting</title>
+</head>
+<body>
+    <h3>Not yet Sort</h3>
+    <p id="display"></p>
+    <button onclick="sortings.ascendingSort()">Ascending Sort</button>
+    <button onclick="sortings.descendingSort()">Descending Sort</button>
+    <p id="result"></p>
+    <script>
+        const sortings = {
+            currentDisplay: [31,56,78,45,1,97,101,23],
+            ascendingSort(){
+                this.currentDisplay.sort(function(c, d){return c - d})
+                document.getElementById("result").innerHTML = this.currentDisplay;
+            },
+            descendingSort(){
+                this.currentDisplay.sort(function(a, b){return b - a});
+                document.getElementById("result").innerHTML = this.currentDisplay;
+            }
+        }
+        document.getElementById("display").innerHTML = sortings.currentDisplay;
+    </script>
+</body>
+</html>
